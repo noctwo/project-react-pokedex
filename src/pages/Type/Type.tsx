@@ -40,7 +40,7 @@ const Type = () => {
     };
 
     return (
-        <>
+        <div className="list-wrapper">
             {fetchAll?.pokemon.map((item, index) => {
                 const details = pokemonDetails[item.pokemon.url];
                 return (
@@ -52,7 +52,7 @@ const Type = () => {
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };
 

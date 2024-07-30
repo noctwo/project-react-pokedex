@@ -3,6 +3,7 @@ import { IAllPokemon } from "../../contracts/IAllPokemon";
 import { FetchUrlContext } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import Card from "../Card/Card";
+import "./List.css"
 
 const List = () => {
 
@@ -26,7 +27,7 @@ const List = () => {
     };
 
     return ( 
-        <>
+        <div className="list-wrapper">
         {fetchAll?.results.map((item, index) => (
             <div key={index} onClick={() => handleCardClick(item.name)}>
             <Card 
@@ -37,7 +38,7 @@ const List = () => {
             </div>
         ) )}
         
-        </>
+        </div>
      );
 }
  

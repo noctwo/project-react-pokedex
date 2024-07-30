@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import { IType } from "../../contracts/IType";
 import { FetchUrlContext } from "../../context/Context";
 import { Link } from "react-router-dom";
+import "./TypeMenu.css"
 
 
 const TypeMenu = () => {
@@ -45,7 +46,7 @@ const TypeMenu = () => {
                 <img src="/img/poke-logo.png"></img>
                 </div>
                 <div className="typeMenuClose" onClick={toggleHeader}>
-                <img src="/img/xmark.svg"></img>
+                <img className="close" src="/img/xmark.svg"></img>
                 </div>
             </div>
             <div className="type-menu-types">

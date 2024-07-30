@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import "./Detail.css"
 
 
 interface DetailProps {
@@ -18,9 +19,14 @@ const Detail: React.FC<DetailProps> = () => {
     })
 
     return (
-        <div>
-            <h1>Details for {name}</h1>
+        <div className="detail-card">
+            <div className="detail-card-img-wrapper">
             <img src={`${detailData?.sprites.front_default}`} />
+            </div>
+            <div className="detail-card-heading-wrapper">
+            <h1>{name}</h1>
+            <h2># {detailData?.order}</h2>
+            </div>
         </div>
     );
 };

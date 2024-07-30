@@ -1,21 +1,24 @@
-.card{
+.detail-card{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 70%;
+    margin: 5em auto;
 }
 
-.card-img-wrapper{
+.detail-card-img-wrapper{
     background-color: #ffe66d;
     text-align: center;
     border-radius: 16px 16px 0 0;
 }
 
-.card-img-wrapper img{
+.detail-card-img-wrapper img{
     height: 150px;
     margin-top: -2.5em;
 }
 
-.card-text-wrapper{
+
+.detail-card-heading-wrapper{
     background-color: #fff;
     color: #222;
     padding: 1em;
