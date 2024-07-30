@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { IAllPokemon } from "../../contracts/IAllPokemon";
 import { FetchUrlContext } from "../../context/Context";
-
+import { useNavigate } from "react-router-dom";
+import Card from "../Card/Card";
 
 const List = () => {
 
+    const navigate = useNavigate();
     const context = useContext(FetchUrlContext);
     if (!context) {
         throw new Error('FetchUrlContext must be used within a FetchUrlProvider');
@@ -19,12 +21,19 @@ const List = () => {
             .then((data) => setFetchAll(data));
     }, [fetchUrl]);
 
+    const handleCardClick = (name: string) => {
+        navigate(`/details/${name}`);
+    };
+
     return ( 
         <>
         {fetchAll?.results.map((item, index) => (
-            <div key={index} className="single-poke-wrapper">
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`}/>
-            <p>{item.name}</p>
+            <div key={index} onClick={() => handleCardClick(item.name)}>
+            <Card 
+            name={item.name}
+            imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`}
+            >
+            </Card>
             </div>
         ) )}
         
